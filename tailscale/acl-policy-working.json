@@ -1,0 +1,37 @@
+{
+	"groups": {
+		"group:admins": [
+			"fleetadmin.demo@gmail.com"
+		],
+		"group:ops": [
+			"deepankannan955@gmail.com"
+		],
+		"group:engineering": [
+			"deeplegend1584@gmail.com"
+		]
+	},
+
+	"acls": [
+		{
+			"action": "accept",
+			"src":    ["group:admins"],
+			"dst":    ["*:*"]
+		},
+		{
+			"action": "accept",
+			"src":    ["group:ops"],
+			"dst":    ["group:admins:8081"]
+		},
+		{
+			"action": "accept",
+			"src":    ["group:engineering"],
+			"dst": [
+				"group:admins:8081",
+				"group:admins:8082",
+				"group:admins:8090",
+				"group:admins:22"
+			]
+		}
+	]
+}
+

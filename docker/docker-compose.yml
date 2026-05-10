@@ -1,0 +1,27 @@
+services:
+  operations-portal:
+    image: nginx:alpine
+    container_name: operations-portal
+    ports:
+      - "8081:80"
+    volumes:
+      - ./operations-portal:/usr/share/nginx/html:ro
+    restart: unless-stopped
+
+  engineering-portal:
+    image: nginx:alpine
+    container_name: engineering-portal
+    ports:
+      - "8082:80"
+    volumes:
+      - ./engineering-portal:/usr/share/nginx/html:ro
+    restart: unless-stopped
+
+  iot-telemetry:
+    image: nginx:alpine
+    container_name: iot-telemetry
+    ports:
+      - "8090:80"
+    volumes:
+      - ./iot-telemetry:/usr/share/nginx/html:ro
+    restart: unless-stopped
