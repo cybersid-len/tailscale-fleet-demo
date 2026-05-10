@@ -40,6 +40,7 @@ fleet-services
 
 The test workstation joins the same tailnet and validates access based on the authenticated user identity.
 
+```text
 Environment Components
 Component	                   Purpose
 fleet-services	                   Azure Ubuntu VM running Tailscale and Docker services
@@ -47,17 +48,19 @@ fleet-demo-ws	                   Test workstation used to validate access as dif
 Operations Portal	           Internal operational web service
 Engineering Portal	           Restricted engineering web service
 IoT Telemetry	                   Simulated onboard telemetry/sensor service 
+```
 
 
+
+```text
 Services
-
 The Ubuntu service node runs three lightweight Docker/Nginx web services:
 
 Service	Port	Purpose
 Operations Portal	8081	Operational access for vessel users
 Engineering Portal	8082	Restricted engineering access
 IoT Telemetry	        8090	Simulated onboard telemetry/sensor service
-
+```
 
 
 
@@ -90,12 +93,12 @@ fleet-services Ubuntu VM
 #Access Model
 
 
-
+```text
 User Role	                        Operations :8081	Engineering :8082	IoT Telemetry :8090	SSH :22
 Vessel Operations	                         Allowed	           Denied	             Denied	Denied
 Fleet Engineering	                         Allowed	          Allowed	            Allowed	Allowed
 Fleet Admin	                                 Allowed	          Allowed	            Allowed	Allowed
-
+```
 
 
 
